@@ -1,28 +1,73 @@
-# MKR.PyTorch
+# MKR
 
-This repository is a PyTorch implementation of MKR ([arXiv](https://arxiv.org/abs/1901.08907)).
-
-The code is heavily based on the original [TensorFlow version](https://github.com/hwwang55/MKR).
-
-![](framework.png)
-
-### Requirements
+## Requirements
 Tested under
-- Python == 3.6
-- PyTorch >= 0.4
+- Python == 3.10
+- PyTorch >= 1.4
 - scikit-learn, tqdm, numpy, matplotlib, tensorboardX
 
-### Running the code
-Preprocess
+
+
+
+
+## Running the code
+There are two way to run the code
+
+1. Use local editors like vscode
+2. Use the colab/kaggle to do it online ( recommend, we do it in this way )
+
+
+
+### 1. local
+
+step 1
+
+in src \ \ preprocess.py
+
 ```
-python src/preprocess.py --dataset movie    # for MovieLens-1M dataset
-python src/preprocess.py --dataset book     # for Book-Crossing dataset    
-python src/preprocess.py --dataset music    # for Last.FM dataset  
+python preprocess.py --dataset 'movie'    # for MovieLens-1M dataset
+
+python preprocess.py --dataset 'music'    # for Last.FM dataset  
 ```
-Train and evaluate
-- In src/main.py:
-  - Uncomment the code blocks of settings for specific dataset
-  - Comment the others you don't need
+step 2
+
+in src \ \ main.py
+
 ```
-$ python src/main.py
+python main.py --dataset 'movie'# for MovieLens-1M dataset
+
+python main.py --dataset 'music'# for Last.FM dataset  
 ```
+
+
+
+### 2. online
+
+just use my github clone
+
+step 1
+
+```
+!git clone -b master https://github.com/CristiZZzz27/MKR.git
+```
+
+```
+cd MKR//src
+```
+
+step 2
+
+```
+!python preprocess.py --dataset 'movie'    # for MovieLens-1M 
+
+!python preprocess.py --dataset 'music'    # for Last.FM 
+```
+
+step 3
+
+```
+!python main.py --dataset 'movie'   # for MovieLens-1M dataset
+
+!python main.py --dataset 'music'   # for Last.FM dataset  
+```
+
